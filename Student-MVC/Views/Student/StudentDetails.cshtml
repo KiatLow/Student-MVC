@@ -1,0 +1,37 @@
+﻿@model Student_MVC.Models.Student
+
+@{
+    ViewData["Title"] = "StudentDetails";
+}
+
+<h1>StudentDetails</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAge)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAge)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditStudent" asp-route-id="@Model?.StudentId">Edit</a> |
+    <a asp-action="DeleteStudent" asp-route-id="@Model?.StudentId">Delete</a> |
+    <a asp-action="StudentList">Back to List</a>
+</div>

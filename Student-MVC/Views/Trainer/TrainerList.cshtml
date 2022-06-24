@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Student_MVC.Models.Trainer>
+
+@{
+    ViewData["Title"] = "TrainerList";
+}
+
+<h1>TrainerList</h1>
+
+<p>
+    <a asp-action="CreateTrainer">Add New Trainer</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Trainer Name
+            </th>
+            <th>
+                Username
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                <a asp-action="EditTrainer" asp-route-id="@item.TrainerId">Edit</a> |
+                <a asp-action="TrainerDetails" asp-route-id="@item.TrainerId">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

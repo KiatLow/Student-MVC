@@ -1,0 +1,28 @@
+﻿@model Student_MVC.Models.Trainer
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="row" style="padding:20px;margin:auto">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Username">
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="col-12">
+                <button type="submit" id="login" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

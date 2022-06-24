@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Menu";
+}
+
+<h1>Menu</h1>
+
+@*<a href="~/StudentCourse/StudentCourseList">Student Course Page</a>
+<a href="~/Student/StudentList">Student Page</a>
+<a href="~/Course/CourseList">Course Page</a>
+<a href="~/Trainer/TrainerList">Trainer Page</a>*@
+
+<dl class="row">
+    <dt class="col-sm-2">
+        Page Name
+    </dt>
+    <dd class="col-sm-10">
+        Button
+    </dd>
+    <dt class="col-sm-2">
+        Trainer
+    </dt>
+    <dd class="col-sm-10">
+        <form method="POST" action="~/Trainer/TrainerList">
+            <input type="submit" value="Click"/>
+        </form>
+    </dd>
+    
+    <dt class="col-sm-2">
+        Student
+    </dt>
+    <dd class="col-sm-10">
+        <form method="POST" action="~/Student/StudentList">
+            <input type="submit" value="Click"/>
+        </form>
+    </dd>
+    <dt class="col-sm-2">
+        Course
+    </dt>
+    <dd class="col-sm-10">
+        <form method="POST" action="~/Course/CourseList">
+            <input type="submit" value="Click"/>
+        </form>
+    </dd>
+    <dt class="col-sm-2">
+        Student Course
+    </dt>
+    <dd class="col-sm-10">
+        <form method="POST" action="~/StudentCourse/StudentCourseList">
+            <input type="submit" value="Click"/>
+        </form>
+    </dd>
+</dl>

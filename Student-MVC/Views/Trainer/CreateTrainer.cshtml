@@ -1,0 +1,69 @@
+﻿@model Student_MVC.Models.Trainer
+
+@{
+    ViewData["Title"] = "CreateTrainer";
+}
+
+<h1>CreateTrainer</h1>
+
+<h4>Trainer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateTrainer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TrainerName" class="control-label"></label>
+                <input asp-for="TrainerName" class="form-control" />
+                <span asp-validation-for="TrainerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Confirm Password
+                <input id="repassword" type="password" class="form-control" />
+            </div>
+            <div id="error" class="alert" style="color:red">
+                Password not match
+            </div>
+            <div class="form-group">
+                <input id="btn" type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="TrainerList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+<script>
+    $('#error').hide()
+    $('#repassword').keyup(function(){
+        var repassword = $(this).val()
+        var password = $('#Password').val()
+        if(password == repassword){
+            $('#btn').prop("disabled",false)
+            $('#error').hide()
+        }
+        else{
+
+            $('#btn').prop("disabled",true)
+            $('#error').show()
+        }
+    })
+</script>
+
+}
